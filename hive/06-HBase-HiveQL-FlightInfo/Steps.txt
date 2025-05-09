@@ -248,3 +248,58 @@ hive> show index on hbase_flight_new;
 OK
 hbase_index         	hbase_flight_new    	delay               	default__hbase_flight_new_hbase_index__	compact             	
 Time taken: 0.27 seconds, Fetched: 1 row(s)
+
+
+1️⃣ What’s Hive?
+Hive is a data warehouse system built on top of Hadoop. It provides an easy way to query and analyze large datasets stored in HDFS (Hadoop Distributed File System), using a language that’s much easier than raw MapReduce. Think SQL on steroids for Big Data. 💪
+
+2️⃣ Hive vs Hadoop:
+Hadoop is the framework that handles big data storage (HDFS) and processing (MapReduce).
+
+Hive is the data warehousing layer that runs SQL-like queries over the data stored in HDFS.
+
+3️⃣ Hive Components:
+HiveQL (HQL): A SQL-like query language.
+
+Metastore: The database that stores metadata (table structures, data types, etc.) for Hive.
+
+Driver: Executes queries, interacts with the Hive Execution Engine.
+
+Execution Engine: Translates HiveQL into MapReduce jobs.
+
+HDFS: Where the data is stored (Hadoop File System).
+
+4️⃣ How Hive Works with Hadoop:
+Data is stored in HDFS (thanks to Hadoop).
+
+You run HiveQL queries on it.
+
+Hive translates those queries into MapReduce jobs that are executed on the Hadoop cluster.
+
+5️⃣ Why Use Hive with Hadoop?
+Abstraction from MapReduce: You don't need to write low-level MapReduce code. Just write HiveQL (like SQL).
+
+Scalability: It takes advantage of Hadoop’s ability to scale horizontally across many machines.
+
+Compatibility: You can use existing Hadoop tools (like Pig, HBase) seamlessly.
+
+6️⃣ Hive Advantages:
+SQL-like syntax makes it easier for analysts (no need to learn Java for MapReduce).
+
+Schema-on-read: You can read data in any format and interpret it at runtime.
+
+Optimized for batch processing over large data.
+
+7️⃣ Hive Limitations:
+Not ideal for real-time queries or low-latency data processing (use HBase or Spark for that).
+
+Slightly slower than traditional relational databases for some use cases due to the overhead of MapReduce.
+
+8️⃣ Hive Use Case Example:
+You have terabytes of log data in HDFS. You want to:
+
+Query the logs.
+
+Calculate the average response time for requests.
+
+Get the top IPs generating errors.
