@@ -72,3 +72,7 @@ public class Max_Logged {
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
+// 🛠️ Mapper: Extracts session durations.
+
+// 🛠️ Reducer: Picks the max session duration per user.
+
