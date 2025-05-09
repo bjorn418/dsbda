@@ -69,3 +69,51 @@ public static class MusicReducer extends Reducer<Text, Text, Text, Text> {
 
 
 }
+// 👉 Mapper (MusicMapper)
+// It reads each line of the CSV.
+
+// It skips the header line if present.
+
+// It splits the line into fields: userId, trackId, and shared status.
+
+// It emits the trackId as the key with:
+
+// USER:userId as the value (to track listeners).
+
+// Additionally, if the shared field equals 1, it also emits the same trackId with the value SHARED.
+
+// 👉 Reducer (MusicReducer)
+// It gets all values for each trackId.
+
+// It maintains a set to store unique user IDs (to count unique listeners).
+
+// It counts how many times the track was shared.
+
+// Finally, it writes the trackId along with:
+
+// The number of unique listeners.
+
+// The number of times the track was shared.
+
+// 🔥 2️⃣ Music1 Program (MusicUnique)
+// 👉 Mapper (MapperClass)
+// It reads each line of the CSV.
+
+// It skips the header line if present.
+
+// It splits the line into fields and extracts the userId.
+
+// It emits the userId as the key with the value 1 (to count user activity).
+
+// 👉 Reducer (ReducerClass)
+// It receives all values for each userId.
+
+// It sums up the values to count how many times each user appeared (number of listens/plays).
+
+// It also keeps a counter of how many unique users there are in total.
+
+// It writes:
+
+// Each userId with their total count of plays.
+
+// And at the end (in the cleanup step), it writes the total number of unique users.
