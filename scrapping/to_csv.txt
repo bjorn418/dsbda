@@ -1,0 +1,12 @@
+min_length = min(len(reviews), len(ratings))
+reviews = reviews[:min_length]
+ratings = ratings[:min_length]
+
+# Create DataFrame
+df = pd.DataFrame({
+    'Review': reviews,
+    'Rating': ratings
+})
+
+# Export to CSV
+df.to_csv('sinners_reviews.csv', index=False)
