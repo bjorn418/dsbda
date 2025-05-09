@@ -80,3 +80,34 @@ public static class MovieReducer extends Reducer<IntWritable, FloatWritable, Int
 
 
 }
+
+// 👉 Mapper (MovieMapper)
+// It reads each line from the CSV file.
+
+// It skips the header row if it's present (checks if the first line contains userId).
+
+// It splits each line to extract:
+
+// movieId (second column).
+
+// rating (third column).
+
+// It emits:
+
+// movieId as the key.
+
+// rating as the value.
+
+// 👉 Reducer (MovieReducer)
+// It receives all ratings for each movieId.
+
+// It sums up all the ratings and counts how many ratings there are for that movie.
+
+// It calculates the average rating by dividing the total sum by the count.
+
+// It writes:
+
+// movieId as the key.
+
+// The average rating as the value.
+
