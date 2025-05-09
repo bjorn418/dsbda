@@ -62,3 +62,9 @@ int sum = 0;
 }
 
 }
+
+// Mapper:
+// Emits each word (uppercase) with a count of 1.
+
+// Reducer:
+// Sums counts for each word.
